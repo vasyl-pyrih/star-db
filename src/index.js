@@ -8,4 +8,6 @@ ReactDOM.render(<App />,
 
 // bootswatch.com
 // https:swapi.co
+// loading.io
+
 // 49 - 57
