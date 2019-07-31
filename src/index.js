@@ -10,4 +10,4 @@ ReactDOM.render(<App />,
 // https:swapi.co
 // loading.io
 
-// 49 - 57
+// 49 - 59
