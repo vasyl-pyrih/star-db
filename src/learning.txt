@@ -1,0 +1,22 @@
+N63 CH;
+
+- lifecycle hooks -
+    1. MOUNTING - комп. створ. і 1-ий раз відобр. на сторінці
+
+        constructor() => render() => componentDidMount()
+
+    2. UPDATES - оновлення компонента
+
+        New Props
+                    => render() => componentDidUpdate()
+        setState()
+
+    3. UNMOUNTING - видалення комп.
+
+        componentWillUnmount()
+
+    4. ERROR - комп. отримує помилку, яка не була піймана раніше
+
+        componentDidCatch()
+
+- На кожному ет. є функ. життєвого циклу
