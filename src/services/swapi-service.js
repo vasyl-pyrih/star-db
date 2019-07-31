@@ -1,4 +1,3 @@
-
 export default class SwapiService {
 
     _apiBase = 'https://swapi.co/api';
@@ -9,6 +8,8 @@ export default class SwapiService {
         if (!res.ok) {
             throw new Error(`Could not fetch ${url}.`)
         }
+
+        return await res.json();
     }
 
     async getAllPeople() {
@@ -31,7 +32,7 @@ export default class SwapiService {
 
       async getStarships() {
         const res = await this.getResource(`/starships/`);
-        return res.results;
+        return res.result;
     }
 
     getStarship(id) {
@@ -39,11 +40,3 @@ export default class SwapiService {
     }
 
 }
-
-const swapi = new SwapiService();
-
-swapi.getAllPeople().then((people) => {
-    people.forEach((p) => {
-        console.log(p.name);
-    });
-});
