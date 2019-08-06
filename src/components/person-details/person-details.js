@@ -31,7 +31,7 @@ export default class PersonDetails extends Component {
         this.swapiService
             .getPerson(personId)
             .then((person) => {
-                thes.setState({ person });
+                this.setState({ person });
             })
     }
 
@@ -47,7 +47,8 @@ export default class PersonDetails extends Component {
         return (
             <div className="person-details card">
                 <img className="person-image"
-                     src=`https://starwars-visualguide.com/assets/img/characters/${id}.jpg" alt="person` />
+                     src=`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`
+                     alt="person" />
 
                 <div className="card-body">
                     <h4>{ name }</h4>

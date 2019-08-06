@@ -10,6 +10,7 @@ import ItemDetails, { Record } from "../item-details";
 import SwapiService from "../../services/swapi-service";
 
 import ItemList from '../item-list';
+import PeoplePage from '../people-page';
 
 import './app.css';
 
@@ -78,24 +79,42 @@ export default class App extends Component {
     );
 
     return (
+
       <ErrorBoundry>
         <div className="stardb-app">
           <Header />
+          { planet }
 
-          <ItemList
-            getData={getAllPeople}
-            onItemSelected={this.onPersonselected}>
+          <div className="row mb2 button-row">
+            <button className="toggle-planet btn btn-warning btn-lg">
+              Toggle Random planet
+            </button>
+          
+          </div>
 
-            { ({name}) => <span>{name}</span> }
-          </ItemList>
+          <PeoplePage />
 
-          <ItemList
-            getData={getAllPlanets}
-            onItemSelected={() => {}}>
+          <div className="row mb2">
+            <div className="xol-md-6">
 
-            { ({name}) => <span>{name}</span> }
-          </ItemList>
+              <ItemList
+                onItemSelected={this.onPersonselected}
+                getData={this.swapiService.getAllPeople}
+                renderItem={(item) => (<span>{item.name}<button>!</button></span>)}>
 
+                { ({name}) => <span>{name}</span> }
+              </ItemList>
+
+              <ItemList
+                onItemSelected={this.onPersonselected}
+                getData={this.swapiService.getAllPlanets}
+                enderItem="{(item) => item.name}">
+
+                { ({name}) => <span>{name}</span> }
+              </ItemList>
+
+            </div>
+          </div>
         </div>
       </ErrorBoundry>
     );
