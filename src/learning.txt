@@ -3,12 +3,13 @@ N63 CH;
 - lifecycle hooks -
     1. MOUNTING - комп. створ. і 1-ий раз відобр. на сторінці
 
+        constructor() => componentWillMount() => render()
         constructor() => render() => componentDidMount()
 
     2. UPDATES - оновлення компонента
 
         New Props
-                    => render() => componentDidUpdate()
+                    => render() => componentDidUpdate(prevProps, prevState )
         setState()
 
     3. UNMOUNTING - видалення комп.
